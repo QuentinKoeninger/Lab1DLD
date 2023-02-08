@@ -9,26 +9,26 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/qkoen/Desktop/Course Work/Spring 2023/Digital Logic Design/Lab1DLD/Lab1/SV
+Z0 dC:/Users/qkoenin/Desktop/Lab1DLD/Lab1/SV
 T_opt
-!s110 1675896156
-V:WU7W9meSfbHM`V7OF@Hz1
+Z1 !s110 1675898581
+V:UzF?PHzQi`M9LVb@JQH60
 04 2 4 work tb fast 0
-=1-ac74b186c324-63e4255c-b-4f5c
+=1-00be43900f5a-63e42ed5-289-3164
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;2021.3;73
 vsilly
-Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1675896155
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R1
 !i10b 1
 !s100 hgWVm5XL_k^JJco]^NLOi2
 I@U:HEh3TYH;=3`ST`CF<_2
 S1
 R0
-Z4 w1675895887
+Z4 w1675898290
 Z5 8silly.sv
 Z6 Fsilly.sv
 !i122 0
@@ -38,18 +38,18 @@ Z8 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z9 !s108 1675896155.000000
+Z9 !s108 1675898581.000000
 Z10 !s107 silly_tb.sv|silly.sv|
-Z11 !s90 -reportprogress|300|silly.sv|silly_tb.sv|
+Z11 !s90 silly.sv|silly_tb.sv|
 !i113 0
 Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
-vsillyTest
 R2
+vsillyTest
 R3
+R1
 !i10b 1
-!s100 3l8iO]]=09C7ONZ8FF6?f2
-IERKKDf<R>^jOIN93T9CXd1
+!s100 Jlm?43QPhIVnMh_GPGcLM2
+Ino4`oJh9@L:6:[dchif>51
 S1
 R0
 R4
@@ -67,21 +67,21 @@ R10
 R11
 !i113 0
 R12
-R1
+R2
 nsilly@test
 vtb
-R2
 R3
+R1
 !i10b 1
-!s100 ohH5VUE]EdU5PESQa6EJ;0
-IhViCifCW9H;2mKe_HFe_42
+!s100 Mhg1`K19kLf<84l3WTe_l3
+I;0<SdT8[K]^hQSJo_d7jE2
 S1
 R0
-w1675896138
+w1675898498
 8silly_tb.sv
 Fsilly_tb.sv
 !i122 0
-L0 2 69
+L0 2 53
 R7
 R8
 r1
@@ -92,4 +92,4 @@ R10
 R11
 !i113 0
 R12
-R1
+R2

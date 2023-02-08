@@ -16,7 +16,7 @@ module sillyTest (input logic cin, [7:0]userInput, output logic [4:0]out);
 
   silly bit2 (userInput[6], userInput[2], c[1], out[2], c[2]);
 
-  silly bit3 (userInput[4], userInput[0], c[2], out[3], out[4]);
+  silly bit3 (userInput[7], userInput[3], c[2], out[3], out[4]);
 
 endmodule
 

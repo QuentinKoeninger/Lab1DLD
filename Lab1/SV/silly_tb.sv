@@ -29,28 +29,11 @@ module tb ();
 	 end
 
 
-   initial
-     begin
-    
-	#0   bits[7:0] = 8'b0000_0000;	
-	#0   carryIn = 1'b0;
-	#0	 correctBits = 5'b0_0000;
-	#0	 Error = currentBits != correctBits;
 
-
-	#20   bits[7:0] = 8'b0000_0001;	
-	#0   carryIn = 1'b0;
-
-	#20   bits[7:0] = 8'b0000_0010;	
-	#0   carryIn = 1'b0;
-
-
-	
-     end
 
 	initial
 	 begin
-		for (i=0; i < 128; i=i+1)
+		for (i=0; i < 150; i=i+1)
 			begin
 			// Put vectors before beginning of clk
 			@(posedge clk)
@@ -58,10 +41,11 @@ module tb ();
 					bits[7:4] = $random;
 					bits[3:0] = $random;
 					carryIn = $random;
+					correctBits = bits[7:4] + bits[3:0] + carryIn;
 				end
 			@(negedge clk)
 				begin
-					$fdisplay(desc3, "%h %h || %h | %h | %b\n", bits[7:4], bits[3:0], currentBits, currentBits, (currentBits == currentBits));
+					$fdisplay(desc3, "%h %h %h || %h | %h | %b\n", bits[7:4], bits[3:0], carryIn, currentBits, correctBits, (currentBits == correctBits));
 				end
 			end // @(negedge clk)
 		end
