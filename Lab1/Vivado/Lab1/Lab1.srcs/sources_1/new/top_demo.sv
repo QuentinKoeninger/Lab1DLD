@@ -20,6 +20,27 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+module silly (input  logic a, b, cin, output logic y, cout);
+   
+  assign y = a ^ b ^ cin;
+  assign cout = (a & b) | (a & cin) | (b & cin);
+   
+endmodule
+
+module sillyTest (input logic cin, [7:0]userInput, output logic [4:0]out);
+
+  logic [2:0]c;
+
+  silly bit0 (userInput[4], userInput[0], cin, out[0], c[0]);
+
+  silly bit1 (userInput[5], userInput[1], c[0], out[1], c[1]);
+
+  silly bit2 (userInput[6], userInput[2], c[1], out[2], c[2]);
+
+  silly bit3 (userInput[7], userInput[3], c[2], out[3], out[4]);
+
+endmodule
+
 module top_demo
 (
   // input
@@ -43,17 +64,21 @@ module top_demo
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
+  logic [4:0] inst1out;
+  logic [4:0] checkOut;
   
   // Place TicTacToe instantiation here
+  sillyTest inst1 (btn[0], sw[7:0], inst1out[4:0]);
+  assign checkOut[4:0] = sw[3:0] + sw[7:4] + btn[0];
   
   // 7-segment display
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
-  .digit0(sw[3:0]),
-  .digit1(4'b0111),
-  .digit2(sw[7:4]),
-  .digit3(4'b1111),
+  .digit0(inst1out[3:0]),
+  .digit1(inst1out[4]),
+  .digit2(checkOut[3:0]),
+  .digit3(checkOut[4]),
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
